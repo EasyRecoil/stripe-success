@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+</head>
+<body>
+    <h1>Payment Completed Successfully! ✅</h1>
+    <p>Your <strong>Session ID</strong> is: <span id="session-id"></span></p>
+    <p>Use the command: <code>!confirm SESSION_ID</code> in the Discord bot.</p>
+
+    <script>
+        // Get the session_id from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get("session_id");
+        
+        // Display the session_id on the page
+        document.getElementById("session-id").textContent = sessionId || "Error: No Session ID found.";
+    </script>
+</body>
+</html>
