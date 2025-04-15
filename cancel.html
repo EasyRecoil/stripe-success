@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Canceled</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .emoji {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Payment Canceled ❌</h1>
-    <p>Your payment was not completed. If this was a mistake, you can try again.</p>
-    <p>To restart the payment process, go back to Discord and use the <code>!buy PLAN_NAME</code> command.</p>
+    <div class="container">
+        <div class="emoji">❌</div>
+        <h1>Payment Canceled</h1>
+        <p>Your payment was not completed. If this was a mistake, you can try again.</p>
+        <p>Don't worry, the process is simple and quick.</p>
+    </div>
+
+    <script>
+        // Get the session_id from the URL (still in background for future use)
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get("session_id");
+        
+        // Store session_id in background for potential future use
+        if (sessionId) {
+            console.log("Session ID:", sessionId);
+        }
+    </script>
 </body>
 </html>
