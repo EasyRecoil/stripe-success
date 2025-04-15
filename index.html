@@ -4,19 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .emoji {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Payment Completed Successfully! ✅</h1>
-    <p>Your <strong>Session ID</strong> is: <span id="session-id"></span></p>
-    <p>Use the command: <code>!confirm SESSION_ID</code> in the Discord bot.</p>
+    <div class="container">
+        <div class="emoji">✅</div>
+        <h1>Payment Completed Successfully!</h1>
+        <p>Your payment has been successfully processed. Thank you for your purchase! 💳</p>
+    </div>
 
     <script>
-        // Get the session_id from the URL
+        // Get the session_id from the URL (still in background for future use)
         const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get("session_id");
         
-        // Display the session_id on the page
-        document.getElementById("session-id").textContent = sessionId || "Error: No Session ID found.";
+        // Store session_id in background for potential future use
+        if (sessionId) {
+            console.log("Session ID:", sessionId);
+        }
     </script>
 </body>
 </html>
